@@ -1,0 +1,9 @@
+/_build/
+/instructions/
+/.agents/
+/.codex/
+/.aws/
+/data/*
+!/data/2026FA_Schedule_example.ics
+/output/*
+!/output/2026FA_Schedule_example.csv
