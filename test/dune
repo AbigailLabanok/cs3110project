@@ -1,0 +1,7 @@
+(test
+ (name test_BigRedMealPlanner)
+ (libraries ounit2 BigRedMealPlanner)
+ (deps (glob_files_rec ../data/*)))
+
+(cram
+ (deps ../bin/main.exe (glob_files_rec ../data/*)))
