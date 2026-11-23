@@ -1,5 +1,5 @@
-(test
- (name test_BigRedMealPlanner)
+(tests
+ (names test_BigRedMealPlanner test_planner)
  (libraries ounit2 qcheck BigRedMealPlanner)
  (deps (glob_files_rec ../data/*)))
 

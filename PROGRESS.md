@@ -73,10 +73,10 @@ Run everything from the project root:
     dune build
     dune test
 
-`dune test` runs two kinds of tests and should finish with `Ran: 39 tests ...
-OK` and no diff:
+`dune test` runs two kinds of tests and should finish with `Ran: X tests ...
+OK`:
 
-- **OUnit/QCheck** (`test/test_BigRedMealPlanner.ml`): unit tests and property
+- **OUnit/QCheck** (`test/test_BigRedMealPlanner.ml` and `test/test_planner.ml`): unit tests and property
   tests (QCheck) of `Schedule`, `Navigation`, `Eateries`, `Strategy`, `Ics_parser` and
   `Schedule_csv`.
 - **Cram** (`test/cli.t`): runs `bin/main.exe` on the sample schedule and
