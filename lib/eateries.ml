@@ -25,7 +25,7 @@ let mon_to_thu = [ Monday; Tuesday; Wednesday; Thursday ]
 let weekends = [ Saturday; Sunday ]
 
 let eateries =
-  (*TODO: Add more eateries, correct opening hours*)
+  (*TODO: Add more eateries, fix hours*)
   Navigation.
     [
       (* North *)
@@ -35,9 +35,9 @@ let eateries =
         kind = Dining_hall;
         hours =
           [
-            (every_day, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
+            (mon_to_thu, hm 7 0, hm 8 0);
+            (every_day, hm 8 0, hm 16 0);
+            (every_day, hm 17 0, hm 20 30);
           ];
       };
       {
@@ -45,37 +45,34 @@ let eateries =
         region = North;
         kind = Dining_hall;
         hours =
-          [
-            (weekdays_only, hm 0 0, hm 0 0);
-            (weekdays_only, hm 0 0, hm 0 0);
-            (weekends, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
-          ];
+          [ (weekends, hm 10 0, hm 14 0); (every_day, hm 17 30, hm 22 30) ];
       };
       {
         name = "Risley Dining Room";
         region = North;
         kind = Dining_hall;
         hours =
-          [ (weekdays_only, hm 0 0, hm 0 0); (mon_to_thu, hm 0 0, hm 0 0) ];
+          [
+            (weekdays_only, hm 11 0, hm 14 0); (weekdays_only, hm 17 0, hm 19 0);
+          ];
       };
       {
         name = "Bear Necessities";
         region = North;
         kind = Cafe;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0); (weekends, hm 0 0, hm 0 0) ];
+        hours =
+          [
+            (every_day, hm 0 0, hm 2 0);
+            (weekdays_only, hm 8 0, hm 10 0);
+            (every_day, hm 10 0, hm 24 0);
+          ];
       };
       (* West *)
       {
         name = "Cook House Dining Room";
         region = West;
         kind = Dining_hall;
-        hours =
-          [
-            (weekdays_only, hm 0 0, hm 0 0);
-            (weekends, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
-          ];
+        hours = [ (weekends, hm 10 0, hm 14 0); (every_day, hm 17 30, hm 22 0) ];
       };
       {
         name = "Becker House Dining Room";
@@ -83,9 +80,10 @@ let eateries =
         kind = Dining_hall;
         hours =
           [
-            (weekdays_only, hm 0 0, hm 0 0);
-            (weekdays_only, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
+            (weekdays_only, hm 7 0, hm 10 0);
+            (weekdays_only, hm 14 0, hm 15 30);
+            (every_day, hm 10 0, hm 14 0);
+            (every_day, hm 17 0, hm 20 0);
           ];
       };
       {
@@ -94,23 +92,28 @@ let eateries =
         kind = Dining_hall;
         hours =
           [
-            (every_day, hm 0 0, hm 0 0);
-            (weekdays_only, hm 0 0, hm 0 0);
-            (every_day, hm 0 0, hm 0 0);
+            (every_day, hm 10 0, hm 14 0);
+            (weekdays_only, hm 7 0, hm 10 0);
+            (every_day, hm 16 30, hm 19 0);
           ];
       };
       {
         name = "Keeton House Dining Room";
         region = West;
         kind = Dining_hall;
-        hours =
-          [ (weekdays_only, hm 0 0, hm 0 0); (mon_to_thu, hm 0 0, hm 0 0) ];
+        hours = [ (weekends, hm 10 0, hm 14 0); (every_day, hm 17 0, hm 20 0) ];
       };
       {
         name = "Rose House Dining Room";
         region = West;
         kind = Dining_hall;
-        hours = [ (weekends, hm 0 0, hm 0 0); (weekdays_only, hm 0 0, hm 0 0) ];
+        hours =
+          [
+            (weekdays_only, hm 7 30, hm 10 0);
+            (weekends, hm 8 0, hm 9 30);
+            (weekends, hm 10 0, hm 14 0);
+            (every_day, hm 17 0, hm 20 0);
+          ];
       };
       (* Central *)
       {
@@ -118,45 +121,47 @@ let eateries =
         region = Central;
         kind = Dining_hall;
         hours =
-          [ (weekdays_only, hm 0 0, hm 0 0); (mon_to_thu, hm 0 0, hm 0 0) ];
+          [
+            (weekdays_only, hm 10 30, hm 14 30);
+            (weekdays_only, hm 16 30, hm 21 0);
+          ];
       };
       {
         name = "Mattin's Cafe";
         region = Central;
         kind = Cafe;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0); (weekends, hm 0 0, hm 0 0) ];
+        hours = [ (weekdays_only, hm 7 0, hm 17 0) ];
       };
       {
         name = "Trillium";
         region = Central;
         kind = Cafe;
-        hours =
-          [ (weekdays_only, hm 0 0, hm 0 0); (weekdays_only, hm 0 0, hm 0 0) ];
+        hours = [ (weekdays_only, hm 8 0, hm 15 0) ];
       };
       {
         name = "Martha's Cafe";
         region = Central;
         kind = Cafe;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0) ];
+        hours = [ (weekdays_only, hm 8 0, hm 15 0) ];
       };
       {
         name = "Terrace";
         region = Central;
         kind = Cafe;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0) ];
+        hours = [ (weekdays_only, hm 10 0, hm 15 0) ];
       };
       {
         name = "Cafe Jennie";
         region = Central;
         kind = Cafe;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0); (weekends, hm 0 0, hm 0 0) ];
+        hours = [ (weekdays_only, hm 8 30, hm 18 0) ];
       };
       (* Collegetown *)
       {
         name = "Collegetown Bagels";
         region = Collegetown;
         kind = Off_campus;
-        hours = [ (weekdays_only, hm 0 0, hm 0 0); (weekends, hm 0 0, hm 0 0) ];
+        hours = [ (every_day, hm 6 30, hm 24 0) ];
       };
     ]
 
