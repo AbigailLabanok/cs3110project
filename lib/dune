@@ -1,2 +1,3 @@
 (library
- (name BigRedMealPlanner))
+ (name BigRedMealPlanner)
+ (instrumentation (backend bisect_ppx)))
