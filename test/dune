@@ -1,6 +1,6 @@
-(test
- (name test_BigRedMealPlanner)
- (libraries ounit2 BigRedMealPlanner)
+(tests
+ (names test_BigRedMealPlanner test_planner)
+ (libraries ounit2 qcheck BigRedMealPlanner)
  (deps (glob_files_rec ../data/*)))
 
 (cram

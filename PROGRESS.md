@@ -13,8 +13,7 @@ The first part of the project is implemented: importing a Cornell Scheduler
 
 The schedule represents a typical teaching week. It does not account for
 holidays, cancellations, or semester date ranges. Meal planning, dining data,
-strategies, and budget summaries are still to come. The test suite currently
-contains only a placeholder test.
+strategies, and budget summaries are still to come.
 
 ## Schedule representation for the meal planner
 
@@ -66,3 +65,26 @@ must be a filename ending in `.csv`, without a directory. The program creates
 
 The CSV columns are **Day, Class, Meeting Type, Location, Start Time, End Time**.
 Days without classes are included in the parsed schedule but have no CSV rows.
+
+## Testing
+
+Run everything from the project root:
+
+    dune build
+    dune test
+
+`dune test` runs two kinds of tests and should finish with `Ran: X tests ...
+OK`:
+
+- **OUnit/QCheck** (`test/test_BigRedMealPlanner.ml` and `test/test_planner.ml`): unit tests and property
+  tests (QCheck) of `Schedule`, `Navigation`, `Eateries`, `Strategy`, `Ics_parser` and
+  `Schedule_csv`.
+- **Cram** (`test/cli.t`): runs `bin/main.exe` on the sample schedule and
+  checks the CSV and the error messages.
+
+To test coverage, run the following commands:
+
+    rm -f bisect*.coverage
+    dune test --instrument-with bisect_ppx --force
+    bisect-ppx-report html
+
