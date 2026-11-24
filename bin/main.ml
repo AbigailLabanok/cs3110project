@@ -8,8 +8,11 @@ let () =
 
   try
     let schedule = Ics_parser.parse_file file in
-    Schedule_csv.write_file "output/schedule.csv" schedule;
-    print_endline "Schedule saved to output/schedule.csv"
+    Schedule_csv.write_file "schedule.csv" schedule;
+    print_endline "Schedule saved to output/schedule.csv";
+
+    let meal_slots = Planner.find_meal_slots schedule in
+    Terminal.display_meal_plan meal_slots
   with Sys_error message | Invalid_argument message ->
     prerr_endline ("Error: " ^ message);
     exit 1
