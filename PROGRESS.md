@@ -56,7 +56,7 @@ from the project root:
 
 ```sh
 dune build
-dune exec BigRedMealPlanner -- data/2026FA_Schedule_example.ics 2026FA_Schedule_example.csv
+dune exec BigRedMealPlanner 
 ```
 
 Replace the input path with your Cornell Scheduler export. The output argument
